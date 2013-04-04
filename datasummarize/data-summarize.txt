@@ -1,0 +1,43 @@
+1. How many records are there?
+   199523
+
+2. How many attributes are there?
+   40
+
+3. How many attributes are continuous?
+   7; continuous columns -> [0, 5, 16, 17, 18, 29, 38]
+   How many attributes are nominal?
+   33;
+
+4. For the continuous features, what are the average, median, maximum,
+and minimum values? What are the first and third quartiles (also known
+as the 25th and 75th percentiles)?
+   See output from program
+
+5. For the nominal features, what are the distinct values, and how
+many times do they appear?
+     see output from program
+
+6. For the numeric features, use R to make 2-dimensional scatter plots
+of two features at a time (some sample code is at the end of this assignment).
+
+
+Relationship in data:
+From the scatterplot of age against weeks worked in year, we can
+notice that there are people of ages between 18 and 80 that work
+between 0 and 50 hours. That is, even the old (80 years) still have to
+work.
+
+code for plotting
+=================
+
+contcols <- c(1, 6, 17, 18, 19, 30, 39)
+
+# reads in census data with headers included
+census.data <- read.csv("../data/census-income-clean2.data")
+
+quartz()
+png("plotfile.png")
+pairs(census.data[,contcols])
+dev.off()
+
