@@ -1,43 +1,23 @@
-1. How many records are there?
-   199523
+Daniel Alabi and Cody Wang
 
-2. How many attributes are there?
-   40
+First, we cleaned the data by removing the 2 columns that weren't attributes of a record 
+in the data attributes: 24th and 41st columns. The data was initially stored in
+census-income.data. After "cleaning", the result was stored in census-income-clean.data.
 
-3. How many attributes are continuous?
-   7; continuous columns -> [0, 5, 16, 17, 18, 29, 38]
-   How many attributes are nominal?
-   33;
+Second, we performed statistical analysis on the continuous features to determine
+the mean, median, maximum, and minimum the first and third quartiles
 
-4. For the continuous features, what are the average, median, maximum,
-and minimum values? What are the first and third quartiles (also known
-as the 25th and 75th percentiles)?
-   See output from program
+1. How many records are there?   1995232. How many attributes are there?   403. How many attributes are continuous? Nominal?   7; 33.4. For the continuous features, what are the average, median, maximum, and minimum values? What are the first and third quartiles (also known as the 25th and 75th percentiles)?   
 
-5. For the nominal features, what are the distinct values, and how
-many times do they appear?
-     see output from program
-
-6. For the numeric features, use R to make 2-dimensional scatter plots
-of two features at a time (some sample code is at the end of this assignment).
+list of continuous columns:  [0, 5, 16, 17, 18, 29, 38]
+list of averages:  [(0, 34.494198663813194), (5, 55.426908175999756), (16, 434.71898979065071), (17, 37.313788385298935), (18, 197.52953293605248), (29, 1.9561804904697704), (38, 23.174897129654227)]
+list of medians:  [(0, 33.0), (5, 0.0), (16, 0.0), (17, 0.0), (18, 0.0), (29, 1.0), (38, 8.0)]
+list of maxs:  [(0, 90.0), (5, 9999.0), (16, 99999.0), (17, 4608.0), (18, 99999.0), (29, 6.0), (38, 52.0)]
+list of mins:  [(0, 0.0), (5, 0.0), (16, 0.0), (17, 0.0), (18, 0.0), (29, 0.0), (38, 0.0)]
+list of first quartiles:  [(0, 15.0), (5, 0.0), (16, 0.0), (17, 0.0), (18, 0.0), (29, 0.0), (38, 0.0)]
+list of third quartiles:  [(0, 50.0), (5, 0.0), (16, 0.0), (17, 0.0), (18, 0.0), (29, 4.0), (38, 52.0)]
 
 
-Relationship in data:
-From the scatterplot of age against weeks worked in year, we can
-notice that there are people of ages between 18 and 80 that work
-between 0 and 50 hours. That is, even the old (80 years) still have to
-work.
 
-code for plotting
-=================
 
-contcols <- c(1, 6, 17, 18, 19, 30, 39)
-
-# reads in census data with headers included
-census.data <- read.csv("../data/census-income-clean2.data")
-
-quartz()
-png("plotfile.png")
-pairs(census.data[,contcols])
-dev.off()
-
+5. For the nominal features, what are the distinct values, and howmany times do they appear?     see output from program6. For the numeric features, use R to make 2-dimensional scatter plotsof two features at a time (some sample code is at the end of this assignment).Relationship in data:From the scatterplot of age against weeks worked in year, we cannotice that there are people of ages between 18 and 80 that workbetween 0 and 50 hours. That is, even the old (80 years) still have towork.code for plotting=================contcols <- c(1, 6, 17, 18, 19, 30, 39)# reads in census data with headers includedcensus.data <- read.csv("../data/census-income-clean2.data")quartz()png("plotfile.png")pairs(census.data[,contcols])dev.off()
