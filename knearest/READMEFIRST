@@ -1,0 +1,15 @@
+Daniel Alabi and Cody Wang
+
+
+We used both Python and R to standardize our data. The Python code produced data that are off by some decimals, so we decided to use StandardizedExcelSheet.xlsx, the standardized data produced by our R code as our final submission, although we included both solutions to show our work.
+
+Explanation of files submitted:
+knearestpart1.py: Python code which standardizes the data and creates transformed.csv.
+
+RcodeforknearestneighborPart1: R code which standardizes the data and creates wrdatafinal.txt.
+
+StandardizedExcelSheet.xlsx: Final version of our data copied and edited from wrdatafinal.txt.
+
+transformed.csv: Alternative standardized data created by knearestpart1.py.
+
+wrdatafinal.txt: raw standardized data produced by RcodeforknearestneighborPart1.
