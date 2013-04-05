@@ -27,7 +27,7 @@ if __name__ == "__main__":
     newdata = []
     for line in data[1:]:
         newdata.append([line[i] for i in range(len(line)) if i in toprocess])
-    sdata = stats.zscore(np.array(newdata, dtype=np.float64))
+    sdata = stats.zscore(np.array(newdata, dtype=np.float32))
     for i in range(len(newdata)):
         for j in range(len(toprocess)):
             data[1+i][toprocess[j]] = sdata[i][j]
