@@ -27,7 +27,15 @@ if __name__ == "__main__":
     newdata = []
     for line in data[1:]:
         newdata.append([line[i] for i in range(len(line)) if i in toprocess])
-    data = newdata
-    print standardize(data)
-    print stats.zscore(np.array(data))
+    sdata = stats.zscore(np.array(newdata, dtype=np.float64))
+    for i in range(len(newdata)):
+        for j in range(len(toprocess)):
+            data[1+i][toprocess[j]] = sdata[i][j]
+    for line in data:
+        print line
+    with open("transformed.csv", "wb") as csvfile:
+        csvw = csv.writer(csvfile)
+        for line in data:
+            csvw.writerow(line)
+    
     
