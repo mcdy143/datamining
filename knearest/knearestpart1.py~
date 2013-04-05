@@ -1,0 +1,11 @@
+# Daniel Alabi and Cody Wang
+# knearestpart1.py
+# standardizes the specified columns in writingportfolio.csv 
+
+if __name__ == "__main__":
+    f = open("writingportfolio.csv")
+    data = []
+    for line in f:
+        data.append(line.split(","));
+    print data
+    standardize(data)
