@@ -6,17 +6,6 @@ import csv
 import numpy as np
 from scipy import stats
 
-def standardize(data):
-    newdata = []
-    data = np.array(data, dtype=np.float64)
-    stds = np.std(data, axis=0)
-    avgs = np.mean(data, axis=0)
-    
-    for line in data:
-        newdata.append((line-avgs)/stds)
-
-    return newdata
-
 if __name__ == "__main__":
     f = open("writingportfolio.csv")
     reader = csv.reader(f)
@@ -27,12 +16,13 @@ if __name__ == "__main__":
     newdata = []
     for line in data[1:]:
         newdata.append([line[i] for i in range(len(line)) if i in toprocess])
-    sdata = stats.zscore(np.array(newdata, dtype=np.float32))
+    sdata = stats.zscore(np.array(newdata, dtype=np.float64))
     for i in range(len(newdata)):
         for j in range(len(toprocess)):
             data[1+i][toprocess[j]] = sdata[i][j]
-    for line in data:
-        print line
+    for i in range(len(newdata)):
+        print newdata[i]
+        print sdata[i]
     with open("transformed.csv", "wb") as csvfile:
         csvw = csv.writer(csvfile)
         for line in data:
