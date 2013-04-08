@@ -73,9 +73,18 @@ def knearestcalculate(kvalues, data):
            
         # calculate how many predictions were actually correct
         correctcount = 0
+        print "k ->", kval
+        print
         for i in range(len(kns)):
+            # print out predicted classification
+            print "ProjectID:", data[i][0], ";Prediction for Needs Work->", \
+                predictions[i][1]
+            
+            # check if prediction for needswork matches true value
             if int(predictions[i][1]) == int(data[i][len(data[0])-1]):
                 correctcount += 1
+        print
+        print
         percentp.append(float(correctcount)*100.0 / float(len(data)))
         
     # percentpk has entries that look like:
@@ -84,10 +93,12 @@ def knearestcalculate(kvalues, data):
 
     # print out (kvalue, percentageCorrect)
     # percentage correct for each value of k
+    print "(k-value, % predicted correctly)"
+    print
     for (kval, percent) in percentpk:
         print (kval, percent)
-
-    # ============= Plot kvalues against Percentage Correct ========== #
+        
+    # ============= Code to Plot kvalues against Percentage Correct ========== #
     xdata = np.array(kvalues)
     ydata = np.array(percentp)
 
@@ -112,6 +123,9 @@ if __name__ == "__main__":
             data.append(line)
 
     # use odd k-values from 1 to 101
-    kvalues = range(1, 102, 2)
+    # kvalues = range(1, 102, 2)
+    
+    # use odd k-values from 1 to 49
+    kvalues = range(1, 50, 2)
 
     knearestcalculate(kvalues, data)
