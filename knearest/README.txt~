@@ -1,0 +1,15 @@
+Daniel Alabi and Cody Wang
+
+Files included:
+euclideanresults.png: plot of percentage predicted correctly for odd k-values of 1
+to 101 using euclidean distance metrics.
+
+manhattanresults.png: plot of percentage predicted correctly for odd k-values of 1
+to 101 using manhattan distance metrics.
+
+knearestpart2.py:
+see comments in file. 
+To obtain results using manhattan metrics, 
+use "result.append(knearest(k, i, cols, data, manhattan))" in allknearest.
+To obtain results using euclidean metrics, 
+use "result.append(knearest(k, i, cols, data, euclidean))" in allknearest.
