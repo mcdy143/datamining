@@ -1,0 +1,21 @@
+How many documents to read?	20000
+What's the first document id?	15968
+What's the second document id?	2874 
+0.0
+Enter num rows for Sig Matrix:	50
+0.0
+
+How many documents to read?	20000
+What's the first document id?	15999
+What's the second document id?	3444
+0.0232558139535
+Enter num rows for Sig Matrix:	50
+0.04
+
+How many documents to read?	20000
+What's the first document id?	403
+What's the second document id?	123
+0.0441988950276
+Enter num rows for Sig Matrix:	50
+0.06
+
