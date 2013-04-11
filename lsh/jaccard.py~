@@ -1,0 +1,17 @@
+# Daniel Alabi and Cody Wang
+# jaccard.py
+# Steps:
+# 1. Read data and store in memory as a set of words for each document.
+#    Don't read all. Just n (which you should accept from command line).
+#    Maybe some error checking on n.
+# 2. then get jaccard similarity between two particular documents
+#    identified by their document id.
+# 3. Write code to produce signature matrix with a specified number of rows.
+#    Store in 2-D. num rows -> no. of hash functions.
+#    num columns -> no. of documents
+#    Remember to seed.
+
+if __name__ == "__main__":
+    f = open("docword.enron.txt")
+    D = int.f.readline()
+    print D
