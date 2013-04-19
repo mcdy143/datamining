@@ -1,0 +1,9 @@
+Daniel Alabi and Cody Wang
+
+Files included:
+summary.pdf: our lab report (graphs included).
+jaccard.py: includes the code for both parts of the assignment except for
+            creating plots.
+plots.zip: includes all the plots that are in the lab report.
+jaccardplots.py: code for plotting the graphs. Must be in the same folder
+                with jaccard.py because it imports the functions from there.
