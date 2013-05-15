@@ -208,7 +208,7 @@ def getdocs(filename):
     
 if __name__ == "__main__":
     # location of data file in /tmp/docword.enron.txt
-    (D, W, n, docs) = getdocs("docword.enron.txt")
+    (D, W, n, docs) = getdocs("/tmp/docword.enron.txt")
     
     k = int(raw_input("What is k?\t"))
     numhashes = int(raw_input("Enter num rows for Sig Matrix:\t"))
