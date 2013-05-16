@@ -96,17 +96,23 @@ def kmeans(data, k, method):
     # belonging to the ith cluster
     return (sse, centers, clusters)
 
+# Calculates the Euclidean magnitude of the line
+def euclidean(line):
+    return math.sqrt(sum([int((line[i]))**2 for i in range(1, 5)]))
+
 if __name__=="__main__":
     f = open("wp_namespace.txt")
     cols = f.readline().split()
     data = []
     for line in f:
         newline = line.strip().split('\t')
-        newline[1] = math.log(int(newline[1])+1, 2)
-        newline[2] = math.log(int(newline[2])+1, 2)
-        newline[3] = math.log(int(newline[3])+1, 2)
-        newline[4] = math.log(int(newline[4])+1, 2)
+        euclideansum = euclidean(newline)
+        newline[1] = float(newline[1])/euclideansum
+        newline[2] = float(newline[2])/euclideansum
+        newline[3] = float(newline[3])/euclideansum
+        newline[4] = float(newline[4])/euclideansum
         data.append(newline)
+    # print data
     k = int(raw_input("Enter the value for k: "))
     print "Choose the method you wish to use to select initial cluster centers"
     method = int(raw_input("Enter 1 for random, 2 for fancy (farthest from closest center):  "))
