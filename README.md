@@ -1,4 +1,2 @@
 datamining
 ==========
-
-lol
